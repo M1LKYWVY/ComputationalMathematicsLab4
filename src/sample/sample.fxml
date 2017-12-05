@@ -1,8 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.GridPane?>
-
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+
+<SplitPane dividerPositions="0.2915451895043732" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="1031.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="611.0" prefWidth="204.0">
+         <children>
+            <Label layoutX="14.0" layoutY="25.0" text="y'=">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <TextField id="functionField" fx:id="functionField" layoutX="66.0" layoutY="14.0" prefHeight="57.0" prefWidth="199.0" promptText="f(x, y)">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <Label layoutX="102.0" layoutY="95.0" text="y(">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <TextField id="x0Field" layoutX="128.0" layoutY="86.0" prefHeight="57.0" prefWidth="52.0" promptText="x0" fx:id="x0Field">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <Label layoutX="186.0" layoutY="95.0" text=")=">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <TextField id="y0Field" fx:id="y0Field" layoutX="213.0" layoutY="86.0" prefHeight="57.0" prefWidth="52.0" promptText="y0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField id="xEndField" layoutX="66.0" layoutY="160.0" prefHeight="57.0" prefWidth="199.0" promptText="End of line" fx:id="xEndField">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField id="accuracyField" fx:id="accuracyField" layoutX="66.0" layoutY="233.0" prefHeight="57.0" prefWidth="199.0" promptText="Accuracy">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <CheckBox id="difFunctionCheckBox" fx:id="difFunctionCheckBox" layoutX="62.0" layoutY="394.0" mnemonicParsing="false" onAction="#modifyFunc" text="Function y'(x)" visible="false">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </CheckBox>
+            <CheckBox id="functionCheckBox" fx:id="functionCheckBox" layoutX="62.0" layoutY="463.0" mnemonicParsing="false" onAction="#modifyFunc" text="Function y(x)" visible="false">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </CheckBox>
+            <Button id="solveButton" fx:id="solveButton" layoutX="28.0" layoutY="317.0" mnemonicParsing="false" onAction="#solveODE" prefHeight="48.0" prefWidth="240.0" text="Solve ODE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="jokeButton" layoutX="28.0" layoutY="394.0" mnemonicParsing="false" onAction="#showJoke" prefHeight="102.0" prefWidth="240.0" text="Push me, and then just ..." textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Label layoutX="7.0" layoutY="169.0" text="EOL:">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="5.0" layoutY="242.0" text="ACC:">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="619.0" prefWidth="583.0">
+         <children>
+            <LineChart fx:id="numberLineChart" layoutX="-7.0" layoutY="7.0" prefHeight="527.0" prefWidth="731.0">
+               <xAxis>
+                  <NumberAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
