@@ -55,7 +55,10 @@ public class Controller {
             y0 = Double.parseDouble(y0Field.getText());
             xN = Double.parseDouble(xEndField.getText());
             accuracy = Double.parseDouble(accuracyField.getText());
-            if (accuracy<0.01) riseAlert("Warning", "Too small accuracy", "Check input data. Error has risen.");
+            if (accuracy<1 || accuracy>xN/2) {
+                riseAlert("Warning", "Too small accuracy", "Check input data. Error has risen.");
+                return;
+            }
             if (xN < x0 ||
                     accuracy <= 0 ||
                     accuracy > xN) throw new Exception();
